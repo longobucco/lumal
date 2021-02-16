@@ -2,9 +2,11 @@ package sistemacentrale;
 
 import stazione.*;
 
+import java.time.LocalTime;
+
 public class Corsa {
 
-	private Time ora;
+	private LocalTime ora;
 	private Stazione stazione;
 	private Postazione postazione;
 

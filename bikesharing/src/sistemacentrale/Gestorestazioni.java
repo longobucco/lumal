@@ -2,6 +2,8 @@ package sistemacentrale;
 
 import stazione.*;
 
+import java.util.Map;
+
 public class Gestorestazioni {
 
 	private Map<String, Stazione> StazioniMap;

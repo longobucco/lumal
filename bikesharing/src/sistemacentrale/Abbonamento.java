@@ -1,8 +1,10 @@
 package sistemacentrale;
 
+import java.time.LocalDateTime;
+
 public class Abbonamento {
 
-	private Data DataScadenza;
+	private LocalDateTime DataScadenza;
 
 	public void rinnovaAbbonamentoSettimanale() {
 		// TODO - implement Abbonamento.rinnovaAbbonamentoSettimanale

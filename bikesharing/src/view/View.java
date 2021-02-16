@@ -1,6 +1,5 @@
-package it.univaq.disim.oop.farmabit.view;
+package view;
 
-import it.univaq.disim.oop.farmabit.controller.DataInitializable;
 import javafx.scene.Parent;
 
 public class View<T> {

@@ -1,9 +1,12 @@
 package sistemacentrale;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Pagamento {
 
 	private Double saldo;
-	private Date data;
+	private LocalDateTime data;
 
 	public void effettuaPagamento() {
 		// TODO - implement Pagamento.effettuaPagamento

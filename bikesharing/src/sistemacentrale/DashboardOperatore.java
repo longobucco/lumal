@@ -2,7 +2,7 @@ package sistemacentrale;
 
 public class DashboardOperatore extends Dashboard {
 
-	private segnalazione Segnalazione;
+	private Segnalazione segnalazione;
 
 	public void chiudiSegnalazione() {
 		// TODO - implement DashboardOperatore.chiudiSegnalazione

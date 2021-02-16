@@ -4,7 +4,8 @@ import sistemacentrale.*;
 
 public class Postazione {
 
-	private Enumeration stato;
+	// Questo in realtà deve essere una ENUM a sé
+	private int stato;
 	private String ID;
 
 	public void consegnaBici() {

@@ -1,18 +1,17 @@
-package it.univaq.disim.oop.farmabit.view;
+package view;
 
 import java.io.IOException;
 
-import it.univaq.disim.oop.farmabit.controller.DataInitializable;
-import it.univaq.disim.oop.farmabit.domain.Utente;
 import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.stage.*;
+import sistemacentrale.Utente;
 
 public class ViewDispatcher {
 	
 	private static final String FXML_SUFFIX = ".fxml";
-	private static final String RESOURCE_BASE = "/viste/";
+	private static final String RESOURCE_BASE = "/view/";
 	public static ViewDispatcher istance = new ViewDispatcher();
 	
 	private Stage stage;
@@ -58,11 +57,12 @@ public class ViewDispatcher {
 		System.exit(1);
 	}
 
-	private <T> View<T> loadView(String viewName) throws ViewException {
+	public <T> View<T> loadView(String viewName) throws ViewException {
 		try {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(RESOURCE_BASE + viewName + FXML_SUFFIX));
-		Parent parent2 = (Parent)loader.load();
-		return new View<>(parent2,loader.getController());
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(RESOURCE_BASE + viewName + FXML_SUFFIX));
+
+			Parent parent = (Parent) loader.load();
+			return new View<>(parent, loader.getController());
 		} catch (IOException e) {
 			throw new ViewException(e);
 		}
@@ -83,11 +83,11 @@ public class ViewDispatcher {
 	}
 	//metodo per la registrazione
 	public void signIn(String utente) {
-			try {
+		try {
 			Parent loginView = loadView("sign"+ utente ).getView();
 			Scene scene = new Scene(loginView);
 			stage.setScene(scene);
-		}catch(ViewException e) {
+		} catch(ViewException e) {
 			renderError(e);
 		}
 		
