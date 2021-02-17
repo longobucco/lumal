@@ -11,7 +11,7 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Controller di messaggi caricato");
+        
     }
 
     @Override

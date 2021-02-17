@@ -10,3 +10,9 @@ progetto.vpp.bak_004d
 progetto.vpp.bak_005d
 
 *.bak_006d
+
+.idea/
+
+bin/
+
+*.iml

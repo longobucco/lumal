@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MessaggiController">
+   <children>
+      <Label text="Hey">
+         <font>
+            <Font name="System Bold Italic" size="53.0" />
+         </font>
+      </Label>
+      <Label text="Test">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+</VBox>

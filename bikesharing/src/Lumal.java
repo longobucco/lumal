@@ -18,7 +18,7 @@ public class Lumal extends Application {
 
         // Inserite le altre viste qui
         if (vista.equals("1"))
-            vistaCaricata = "inviaMessaggi";
+            vistaCaricata = "dashboard";
 
         var view = ViewDispatcher.getIstance().loadView(vistaCaricata);
         stage.setScene(new Scene(view.getView(), 800, 600));
