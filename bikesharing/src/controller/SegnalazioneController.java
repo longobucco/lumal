@@ -1,7 +1,5 @@
 package controller;
 
-import java.awt.Button;
-import java.awt.event.ActionEvent;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -9,14 +7,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextField;
+import sistemacentrale.Utente;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import view.DataInitializable;
 
-public class SegnalazioneController {
+public class SegnalazioneController implements Initializable, DataInitializable<Utente> {
 
     @FXML
     private TextField testoSegnalazione;
@@ -61,6 +62,12 @@ public class SegnalazioneController {
 
 	public void initialize(URL location, ResourceBundle resources) {
 		sceltaSegnalazione.getItems().addAll("Sblocco", "Pagamento", "Postazione", "Prenotazione", "Veicolo", "Altro");
+		
+	}
+
+	@Override
+	public void initializeData(Utente data) {
+		// TODO Auto-generated method stub
 		
 	};
     

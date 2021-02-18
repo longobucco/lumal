@@ -71,28 +71,6 @@ public class ViewDispatcher {
 	public static ViewDispatcher getIstance() {
 		return istance;
 	}
-
-	public void logout() {
-		try {
-		Parent loginView = loadView("login").getView();
-		Scene scene = new Scene(loginView);
-		stage.setScene(scene);
-		} catch (ViewException e) {
-		renderError(e);
-		}
-	}
-	//metodo per la registrazione
-	public void signIn(String utente) {
-		try {
-			Parent loginView = loadView("sign"+ utente ).getView();
-			Scene scene = new Scene(loginView);
-			stage.setScene(scene);
-		} catch(ViewException e) {
-			renderError(e);
-		}
-		
-	}
-	
 	
 	public <T> void renderView(String viewName, T data) {
 		try {
@@ -108,6 +86,3 @@ public class ViewDispatcher {
 	}
 	
 }
-
-
-

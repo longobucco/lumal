@@ -11,8 +11,9 @@ import javafx.scene.layout.BorderPane;
 import sistemacentrale.Utente;
 import view.DataInitializable;
 import view.ViewDispatcher;
+import view.ViewException;
 
-public class UtenteController implements  Initializable, DataInitializable<Utente>{
+public class UtenteController implements  Initializable, DataInitializable<Utente> {
 
     @FXML
     private BorderPane principale;
@@ -31,12 +32,11 @@ public class UtenteController implements  Initializable, DataInitializable<Utent
         this.dispatcher=ViewDispatcher.getIstance();
     }
 
-
     @Override
     public void initializeData(Utente data) {
-
-
+        
     }
+    
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         // TODO Auto-generated method stub
@@ -45,13 +45,21 @@ public class UtenteController implements  Initializable, DataInitializable<Utent
 
     @FXML
     public void prenotazioneAction(ActionEvent event) {
-
+        try {
+            var view = dispatcher.loadView("interfacciaPrenotazione").getView();
+            principale.setCenter(view);
+        } catch (ViewException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
     public void segnalazioneAction(ActionEvent event) {
-
+        try {
+            var view = dispatcher.loadView("inviaSegnalazione").getView();
+            principale.setCenter(view);
+        } catch (ViewException e) {
+            e.printStackTrace();
+        }
     }
-
-
 
 }
