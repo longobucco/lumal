@@ -19,11 +19,15 @@ public class DashboardController implements Initializable, DataInitializable<Ute
     private Button invioNotificheButton;
 
     @FXML
+    private Button segnalazioniButton;
+
+    @FXML
     private BorderPane visualizzatore;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         invioNotificheButton.setOnAction(event -> caricaVista("inviaMessaggi"));
+        segnalazioniButton.setOnAction(event -> caricaVista("segnalazioniRicevute"));
     }
 
     @Override
