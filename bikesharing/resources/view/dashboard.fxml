@@ -10,7 +10,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
    <children>
       <HBox maxHeight="50.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #333333;">
@@ -42,6 +41,11 @@
                   </Text>
                   <Separator prefWidth="200.0" />
                   <Button fx:id="invioNotificheButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="Invio notifiche">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="segnalazioniButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" text="Segnalazioni">
                      <font>
                         <Font size="16.0" />
                      </font>
