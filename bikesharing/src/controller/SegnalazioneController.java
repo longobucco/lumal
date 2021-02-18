@@ -32,7 +32,7 @@ public class SegnalazioneController implements Initializable, DataInitializable<
     void invioButton(ActionEvent event) {
     	try {
     		  // ATTENZIONE: modificare percorso
-              File file = new File ("C:/Users/user/git/lumal/bikesharing/data/" + "segnalazioni.txt");
+              File file = new File ("C:/Users/Alessandro Di Cicco/lumal/bikesharing/data/" + "segnalazioni.txt");
               BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
               bw.append( sceltaSegnalazione.getValue().toString()+ "\n");     
               bw.append( testoSegnalazione.getText().toString()+ "\n");   

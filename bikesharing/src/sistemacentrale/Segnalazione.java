@@ -2,8 +2,9 @@ package sistemacentrale;
 
 public class Segnalazione {
 
-	// Questa dovrebbe essere una enumerazione implementata in un altro file!
-	private int categoria;
+	private String categoria;
+	private String descrizione;
+
 	private Operatore operatore;
 
 	public Operatore getOperatore() {
@@ -18,4 +19,19 @@ public class Segnalazione {
 		this.operatore = operatore;
 	}
 
+	public void setCategoria(String cat) {
+		categoria = cat;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
 }
