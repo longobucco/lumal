@@ -1,4 +1,6 @@
 Veicolo
 Danneggiato
-Sblocco
-aaa
+Prenotazione
+Non è andata a buon fine
+Pagamento
+Il pagamento non viene processato

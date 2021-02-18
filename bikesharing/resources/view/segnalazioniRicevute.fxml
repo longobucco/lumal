@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SegnalazioniRicevuteController">
+<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SegnalazioniRicevuteController">
    <children>
       <Label alignment="CENTER" text="Segnalazioni" textAlignment="CENTER">
          <font>
@@ -15,25 +17,47 @@
       </Label>
       <HBox VBox.vgrow="ALWAYS">
          <children>
-            <ListView fx:id="segnalazioniList" editable="true" HBox.hgrow="ALWAYS" />
-            <VBox fx:id="segnalazioneBox" prefHeight="400.0" prefWidth="159.0" HBox.hgrow="ALWAYS">
+            <ListView fx:id="segnalazioniList" editable="true" minWidth="50.0" prefHeight="400.0" prefWidth="168.0" HBox.hgrow="ALWAYS" />
+            <VBox fx:id="segnalazioneBox" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="215.0" HBox.hgrow="ALWAYS">
                <children>
+                  <Label text="Informazioni segnalazione">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Separator>
                   <HBox>
                      <children>
-                        <Label text="Tipo: " />
-                        <Label fx:id="categoriaSegnalazione" />
+                        <Label text="Categoria: ">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
+                        <Label fx:id="categoriaSegnalazione">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <HBox>
                      <children>
-                        <Label text="Descrizione: " />
-                        <Label fx:id="descrizioneSegnalazione" />
+                        <Label text="Descrizione: ">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                        <Label fx:id="descrizioneSegnalazione">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                </children>
             </VBox>
          </children>
       </HBox>
-      <Label fx:id="vuotoLabel" text="Label" />
+      <Label fx:id="vuotoLabel" text="" />
    </children>
 </VBox>
