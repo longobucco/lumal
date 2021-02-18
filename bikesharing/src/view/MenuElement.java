@@ -1,4 +1,4 @@
-package it.univaq.disim.oop.farmabit.view;
+package view;
 
 public class MenuElement {
 private String nome;
