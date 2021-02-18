@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>data/segnalazioni.txt</name>
+			<type>1</type>
+			<location>C:/Users/user/git/lumal/bikesharing/data/segnalazioni.txt</location>
+		</link>
+	</linkedResources>
 </projectDescription>

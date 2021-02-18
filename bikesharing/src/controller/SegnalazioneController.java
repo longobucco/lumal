@@ -31,32 +31,24 @@ public class SegnalazioneController implements Initializable, DataInitializable<
     @FXML
     void invioButton(ActionEvent event) {
     	try {
-            // Crea file segnalazione
-        	  
-              StringBuilder sb =  new StringBuilder();
-              sb.append( sceltaSegnalazione.getValue().toString()+ "\n");   
-              sb.append( testoSegnalazione.getText().toString()+ "\n");       
-
-              File file = new File ("segnalazioni" + ".txt");
-              // if (!file.exists()) {
-              FileWriter W = null;
-              W = new FileWriter (file);
-              W.write(sb.toString());
-              W.close();
-              
-              File file1 = new File ("segnalazioni" + ".txt");
-              BufferedWriter bw = new BufferedWriter(new FileWriter(file1, true));
+    		  // ATTENZIONE: modificare percorso
+              File file = new File ("C:/Users/user/git/lumal/bikesharing/data/" + "segnalazioni.txt");
+              BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
               bw.append( sceltaSegnalazione.getValue().toString()+ "\n");     
               bw.append( testoSegnalazione.getText().toString()+ "\n");   
               bw.close();
               
-        	// Success alert
+        	// Conferma invio
       		Alert successAlert = new Alert(AlertType.CONFIRMATION);
       		successAlert.setHeaderText("Conferma");
       		successAlert.setContentText("La tua segnalazione è stata inviata al Supporto");
       		successAlert.showAndWait();
             } catch (IOException e) {
               e.printStackTrace();
+        	  Alert errorAlert = new Alert(AlertType.ERROR);
+          	  errorAlert.setHeaderText("Errore");
+          	  errorAlert.setContentText("Si è verificato un problema");
+              errorAlert.showAndWait();
             }
     }
 
