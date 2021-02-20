@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -10,13 +15,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
    <children>
-      <HBox maxHeight="50.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #333333;">
+      <HBox maxHeight="50.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #19bb52;">
          <children>
-            <Label text="Dasboard amministratore" textFill="WHITE">
+            <Label text="Dashboard Amministratore" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="Segoe UI Bold Italic" size="20.0" />
                </font>
             </Label>
          </children>
@@ -29,11 +34,11 @@
       </HBox>
       <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="ALWAYS">
          <children>
-            <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #dddddd;" HBox.hgrow="ALWAYS">
+            <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #79c96e;" HBox.hgrow="ALWAYS">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Menu">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Arial Italic" size="16.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

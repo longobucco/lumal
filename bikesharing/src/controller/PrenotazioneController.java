@@ -35,9 +35,8 @@ public class PrenotazioneController implements Initializable, DataInitializable<
     private Utente utente;
     private Prenotazione prenotazione;
 
-
     public PrenotazioneController() {
-        this.dispatcher=ViewDispatcher.getIstance();
+        this.dispatcher = ViewDispatcher.getIstance();
     }
 
     @Override
