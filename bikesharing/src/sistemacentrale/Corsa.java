@@ -7,20 +7,22 @@ import java.time.LocalTime;
 public class Corsa {
 
 	private LocalTime ora;
-	private Stazione stazione;
-	private Postazione postazione;
+	private String stazione;
+	private String postazione;
 
 	/**
-	 * 
+	 *
 	 * @param postazione
 	 */
-	public void Corsa(Postazione postazione) {
-		// TODO - implement Corsa.Corsa
+
+	//prende la stringa mandata dall'utente che scannerizza il qr code
+	public void Corsa(String cardinalitÃ ) {
+
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param postazione
 	 */
 	public void fineCorsa(Postazione postazione) {

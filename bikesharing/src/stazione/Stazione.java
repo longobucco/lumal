@@ -1,30 +1,47 @@
 package stazione;
 
-public class Stazione {
+import java.util.LinkedList;
+import java.util.List;
 
-	private Boolean stato;
-	private Double occupazione;
+import sistemacentrale.Prenotazione;
+
+public class Stazione implements consegnaBici{
+
+	private String name;
+	private static int totali;
+	private List<Postazione> stato;
+	private int libere;
 	private String ID;
 
-	public Boolean getStato() {
-		return this.stato;
+	public Stazione() {
+		stato = new LinkedList<Postazione>();
+		totali = stato.size();
+		libere = totali;
+
+	}
+
+	public List<Postazione> getStato() {
+		return stato;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param stato
 	 */
-	public void setStato(Boolean stato) {
-		this.stato = stato;
+
+	public int getOccupazione() {
+		return libere-totali;
 	}
 
-	public Double getOccupazione() {
-		return this.occupazione;
-	}
 
 	public void notificaConsegnaBici() {
-		// TODO - implement Stazione.notificaConsegnaBici
+
 		throw new UnsupportedOperationException();
 	}
+
+	public String getName() {
+		return name;
+	}
+
 
 }
