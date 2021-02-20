@@ -1,13 +1,20 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import sistemacentrale.Utente;
 import view.DataInitializable;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -57,10 +64,34 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
             invioButton.setDisable(false);
         }
     }
+    
+    @FXML
+    void inviaNotifica(ActionEvent event) {
+    	try {
+  		  // ATTENZIONE: modificare percorso
+            File file = new File ("C:/Users/user/git/lumal/bikesharing/data/notifiche.txt");
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file, false));
+            bw.append( titoloField.getText().toString()+ "\n");     
+            bw.append( contenutoField.getText().toString()+ "\n");   
+            bw.close();
+            
+      	// Conferma invio
+    		Alert successAlert = new Alert(AlertType.CONFIRMATION);
+    		successAlert.setHeaderText("Conferma");
+    		successAlert.setContentText("La notifica è stata inviata con successo");
+    		successAlert.showAndWait();
+          } catch (IOException e) {
+            e.printStackTrace();
+      	  Alert errorAlert = new Alert(AlertType.ERROR);
+        	  errorAlert.setHeaderText("Errore");
+        	  errorAlert.setContentText("Si è verificato un problema");
+            errorAlert.showAndWait();
+          }
+    }
 
     private void inviaNotifica() {
         titoloField.setText("");
         contenutoField.setText("");
         warningLabel.setText("Notifica inviata agli utenti!");
-    }
+    } 
 }
