@@ -35,7 +35,6 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
     public void initialize(URL url, ResourceBundle resourceBundle) {
         titoloField.textProperty().addListener((o -> updateLimiti()));
         contenutoField.textProperty().addListener(o -> updateLimiti());
-        invioButton.setOnAction(e -> inviaNotifica());
     }
 
     @Override
@@ -67,9 +66,10 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
     
     @FXML
     void inviaNotifica(ActionEvent event) {
+        System.out.println("Invio notifiche");
     	try {
   		  // ATTENZIONE: modificare percorso
-            File file = new File ("C:/Users/user/git/lumal/bikesharing/data/notifiche.txt");
+            File file = new File ("C:/Users/Alessandro Di Cicco/lumal/bikesharing/data/notifiche.txt");
             BufferedWriter bw = new BufferedWriter(new FileWriter(file, false));
             bw.append( titoloField.getText().toString()+ "\n");     
             bw.append( contenutoField.getText().toString()+ "\n");   
@@ -88,10 +88,4 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
             errorAlert.showAndWait();
           }
     }
-
-    private void inviaNotifica() {
-        titoloField.setText("");
-        contenutoField.setText("");
-        warningLabel.setText("Notifica inviata agli utenti!");
-    } 
 }

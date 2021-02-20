@@ -1,4 +1,4 @@
-package sistemacentrale;
+/*package sistemacentrale;
 
 import stazione.*;
 
@@ -22,9 +22,11 @@ public class GestoreStazioni {
 	 * 
 	 * @param prenotazione
 	 */
+/*
 	public boolean prenotazione(Prenotazione prenotazione) {
 		/*gli viene passata una prenotazione e riserva un posto in una stazione
 		*all'utente della prenotazione*/
+/*
 		int libere = statoStazioni.get(prenotazione.getStazione());
 		if(libere > 0) {
 			statoStazioni.replace(prenotazione.getStazione(), libere--);
@@ -33,7 +35,6 @@ public class GestoreStazioni {
 		}
 		return false;
 	}
-	
 	public void cancellaPrenotazione(Prenotazione prenotazione) {
 		int libere = statoStazioni.get(prenotazione.getStazione());
 		statoStazioni.replace(prenotazione.getStazione(), libere++);
@@ -44,6 +45,7 @@ public class GestoreStazioni {
 	 * 
 	 * @param corsa
 	 */
+	/*
 	public boolean nuovaCorsa(Corsa corsa) {
 		
 		
@@ -59,3 +61,4 @@ public class GestoreStazioni {
 	}
 
 }
+//*/
