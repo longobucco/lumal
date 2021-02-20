@@ -66,9 +66,10 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
     
     @FXML
     void inviaNotifica(ActionEvent event) {
+        System.out.println("Invio notifiche");
     	try {
   		  // ATTENZIONE: modificare percorso
-            File file = new File ("C:/Users/user/git/lumal/bikesharing/data/notifiche.txt");
+            File file = new File ("C:/Users/Alessandro Di Cicco/lumal/bikesharing/data/notifiche.txt");
             BufferedWriter bw = new BufferedWriter(new FileWriter(file, false));
             bw.append( titoloField.getText().toString()+ "\n");     
             bw.append( contenutoField.getText().toString()+ "\n");   
@@ -87,5 +88,8 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
             errorAlert.showAndWait();
           }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'main' of https://github.com/maca99/lumal
 }
