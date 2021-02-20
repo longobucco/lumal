@@ -35,7 +35,6 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
     public void initialize(URL url, ResourceBundle resourceBundle) {
         titoloField.textProperty().addListener((o -> updateLimiti()));
         contenutoField.textProperty().addListener(o -> updateLimiti());
-        invioButton.setOnAction(e -> inviaNotifica());
     }
 
     @Override
@@ -89,9 +88,4 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
           }
     }
 
-    private void inviaNotifica() {
-        titoloField.setText("");
-        contenutoField.setText("");
-        warningLabel.setText("Notifica inviata agli utenti!");
-    } 
 }
