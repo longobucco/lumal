@@ -19,7 +19,7 @@ public class ServiziUtente /* implements *****/  {
         this.setUtente(utente);
         prenotazione=null;
         corsa=null;
-        stazioni=GestoreStazioni.getIstance();
+        stazioni = GestoreStazioni.getIstance();
         //facciamo finta che venga preso da un DB
         abbonamento = new Abbonamento();
     }
