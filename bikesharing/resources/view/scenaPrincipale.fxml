@@ -26,9 +26,7 @@
       <AnchorPane prefHeight="328.0" prefWidth="178.0" style="-fx-background-color: #79c96e;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="prenotaButton" layoutX="11.0" layoutY="23.0" mnemonicParsing="false" onAction="#prenotazioneAction" prefHeight="25.0" prefWidth="147.0" text="Prenota una bici" />
-            <Button fx:id="corsaButton" layoutX="10.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Inizia corsa" />
-            <Button fx:id="segnalazioneButton" layoutX="11.0" layoutY="275.0" mnemonicParsing="false" onAction="#segnalazioneAction" prefHeight="25.0" prefWidth="147.0" text="Segnala un problema" />
-            <Button fx:id="abbonamentoButton" layoutX="10.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Rinnova Abbonamento" />
+            <Button fx:id="segnalazioneButton" layoutX="11.0" layoutY="62.0" mnemonicParsing="false" onAction="#segnalazioneAction" prefHeight="25.0" prefWidth="147.0" text="Segnala un problema" />
          </children>
       </AnchorPane>
    </left>
