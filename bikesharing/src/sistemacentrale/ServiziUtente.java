@@ -9,7 +9,6 @@ import stazione.Stazione;
 
 public class ServiziUtente /* implements *****/  {
 
-    private ServiziUtente istance;
     private Prenotazione prenotazione;
     private Corsa corsa;
     private Abbonamento abbonamento;
