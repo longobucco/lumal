@@ -25,9 +25,12 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 	public GestoreStazioni() {
 		//metodo che prende in input le stazioni
 		Stazione stazione1 = new Stazione("ghgvhgvg");
+		
 		statoStazioni = new HashMap<Stazione,Integer>();
 		cercaStazioni = new HashMap<String,Stazione>();
 		prenotazioni = new LinkedList();
+		statoStazioni.put(stazione1, 7);
+		cercaStazioni.put(stazione1.getName(), stazione1);
 		corse = new LinkedList<Corsa>();
 	}
 
