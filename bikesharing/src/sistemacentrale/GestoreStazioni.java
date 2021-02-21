@@ -86,6 +86,7 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 	}
 
 	public List<Stazione> getStazioni() {
+		System.out.println("OK");
 		return new LinkedList<Stazione>(statoStazioni.keySet());
 	}
 

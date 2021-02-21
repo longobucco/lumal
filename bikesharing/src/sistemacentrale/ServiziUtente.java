@@ -39,7 +39,7 @@ public class ServiziUtente /* implements *****/ {
 		}
 		return false;
 	}
-
+/*
 	public boolean prenotazione(String stazione) {
 		if (prenotazione != null)
 			return false;
@@ -48,7 +48,7 @@ public class ServiziUtente /* implements *****/ {
 		stazioni.prenotazione(prenotazione);
 		return true;
 	}
-
+*/
 	public List<Stazione> getAllStazioni() {
 		System.out.println("1"); 
 		return stazioni.getStazioni();
