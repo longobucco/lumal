@@ -72,10 +72,10 @@ public class UtenteController implements Initializable, DataInitializable<Utente
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		campoNotifiche.setEditable(false);
 		try {
-			File notifiche = new File("C:/Users/user/git/lumal/bikesharing/data/notifiche.txt");
+			File notifiche = new File("C:/Users/Alessandro Di Cicco/lumal/bikesharing/data/notifiche.txt");
 			if (notifiche.exists()) {
 				var reader = new BufferedReader(
-						new FileReader("C:/Users/user/git/lumal/bikesharing/data/notifiche.txt"));
+						new FileReader("C:/Users/Alessandro Di Cicco/lumal/bikesharing/data/notifiche.txt"));
 				String titolo = reader.readLine();
 				String descrizione = reader.readLine();
 				reader.close();

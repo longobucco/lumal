@@ -7,57 +7,59 @@ import java.util.List;
 
 import stazione.Stazione;
 
-public class ServiziUtente {
+public class ServiziUtente /* implements *****/  {
 
-	private Prenotazione prenotazione;
-	private Corsa corsa;
-	private Abbonamento abbonamento;
-	private Utente utente;
-	private Integer Strike;
-	private GestoreStazioni stazioni;
+    private Prenotazione prenotazione;
+    private Corsa corsa;
+    private Abbonamento abbonamento;
+    private Utente utente;
+    private Integer Strike;
+    private GestoreStazioni stazioni;
+    
+    public ServiziUtente(Utente utente) {
+        this.setUtente(utente);
+        prenotazione=null;
+        corsa=null;
+        stazioni = GestoreStazioni.getIstance();
+        //facciamo finta che venga preso da un DB
+        abbonamento = new Abbonamento();
+    }
 
-	public ServiziUtente(Utente utente) {
-		this.setUtente(utente);
-		prenotazione = null;
-		corsa = null;
-		stazioni = GestoreStazioni.getInstance();
-		abbonamento = new Abbonamento();
-	}
+    private boolean verificaAbbonamento() {
+        return false;
 
-	private boolean verificaAbbonamento() {
-		return false;
+    }
 
-	}
+    private boolean iniziaCorsa(String stazione) {
+        if(corsa != null) return false;
 
-	private boolean iniziaCorsa(String stazione) {
-		if (corsa != null)
-			return false;
+        if(prenotazione != null) {
 
-		if (prenotazione != null) {
+        }
+        return false;
 
-		}
-		return false;
-	}
 
-	public boolean prenotazione(String stazione) {
-		if (prenotazione != null)
-			return false;
-		prenotazione = new Prenotazione();
-		prenotazione.setStazione(stazione);
-		stazioni.prenotazione(prenotazione);
-		return true;
-	}
+    }
 
-	public List<Stazione> getAllStazioni() {
-		return stazioni.getStazioni();
-	}
+    public boolean prenotazione(String stazione) {
+        if(prenotazione != null)return false;
+        prenotazione = new Prenotazione();
+        prenotazione.setStazione(stazione);
+        stazioni.prenotazione(prenotazione);
+        return true;
+    }
+    
+    public List<Stazione> getAllStazioni(){
+    	return new LinkedList<Stazione>(stazioni.getStazioni());
+    }
 
-	public Utente getUtente() {
-		return utente;
-	}
+    public Utente getUtente() {
+        return utente;
+    }
 
-	public void setUtente(Utente utente) {
-		this.utente = utente;
-	}
+    public void setUtente(Utente utente) {
+        this.utente = utente;
+    }
+
 
 }

@@ -29,7 +29,7 @@ import stazione.Stazione;
 import view.DataInitializable;
 import view.ViewDispatcher;
 
-public class PrenotazioneController implements Initializable, DataInitializable<Object> {
+public class PrenotazioneController implements Initializable, DataInitializable<Utente> {
 
 	@FXML
 	private TableView<Stazione> prenotazioneTable;
@@ -85,36 +85,7 @@ public class PrenotazioneController implements Initializable, DataInitializable<
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void initializeData(Object data) {
-		// this.utente=utente;
-		// prenotazione = new Prenotazione(utente);
-		System.out.println("vfmk");
-		stazioneColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-		biciColumn.setCellValueFactory(new PropertyValueFactory<>("libere"));
-		prenotaColumn.setCellValueFactory(
-				new Callback<TableColumn.CellDataFeatures<Stazione, Button>, ObservableValue<Button>>() {
-					@Override
-					public ObservableValue<Button> call(CellDataFeatures<Stazione, Button> param) {
-						final Button prenotaButton = new Button("Prenota");
-						prenotaButton.setOnAction(new EventHandler<ActionEvent>() {
-							@Override
-							public void handle(ActionEvent event) {
-
-								dispatcher.renderView("prenotazione", null);
-							}
-						});
-						return new SimpleObjectProperty<Button>(prenotaButton);
-					}
-
-				});
-
-		ObservableList<Stazione> allStazioni = FXCollections.observableList(service.getAllStazioni());
-
-		prenotazioneTable.setItems(allStazioni);
-=======
 	public void initializeData(Utente data) {
->>>>>>> refs/remotes/origin/main
 
 	}
 

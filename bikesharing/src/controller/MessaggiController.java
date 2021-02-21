@@ -69,7 +69,7 @@ public class MessaggiController implements Initializable, DataInitializable<Uten
         System.out.println("Invio notifiche");
     	try {
   		  // ATTENZIONE: modificare percorso
-            File file = new File ("C:/Users/user/git/lumal/bikesharing/data/notifiche.txt");
+            File file = new File ("C:/Users/Alessandro Di Cicco/lumal/bikesharing/data/notifiche.txt");
             BufferedWriter bw = new BufferedWriter(new FileWriter(file, false));
             bw.append( titoloField.getText().toString()+ "\n");     
             bw.append( contenutoField.getText().toString()+ "\n");   
