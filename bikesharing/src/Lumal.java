@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sistemacentrale.GestoreStazioni;
 import view.ViewDispatcher;
 
 public class Lumal extends Application {
@@ -23,6 +24,7 @@ public class Lumal extends Application {
             vistaCaricata = "scenaPrincipale";
 
         var view = ViewDispatcher.getIstance().loadView(vistaCaricata);
+        GestoreStazioni stazioni = new GestoreStazioni();
         stage.setScene(new Scene(view.getView(), 800, 600));
         stage.show();
     }
