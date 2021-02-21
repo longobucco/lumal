@@ -26,53 +26,59 @@ import view.ViewDispatcher;
 
 public class PrenotazioneController implements Initializable, DataInitializable<Utente> {
 
-    @FXML
-    private TableView<Stazione> prenotazioneTable;
-    @FXML
-    private TableColumn<Stazione,String> stazioneColumn;
-    @FXML
-    private TableColumn<Stazione,Button> prenotaColumn;
+	@FXML
+	private TableView<Stazione> prenotazioneTable;
 
-    private ViewDispatcher dispatcher;
-    private ServiziUtente service;
+	@FXML
+	private TableColumn<Stazione, Integer> biciColumn;
 
-    public PrenotazioneController() {
-        this.dispatcher = ViewDispatcher.getIstance();
-        Utente utente = new Utente();
-        service = new ServiziUtente(utente);
-    }
+	@FXML
+	private TableColumn<Stazione, Button> prenotaColumn;
 
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-    }
+	@FXML
+	private TableColumn<Stazione, String> stazioneColumn;
 
-    @Override
-    public void initializeData(Utente data) {
-        // this.utente=utente;
-        // prenotazione = new Prenotazione(utente);
-        stazioneColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+	private ViewDispatcher dispatcher;
 
-        prenotaColumn.setCellValueFactory(
-                new Callback<TableColumn.CellDataFeatures<Stazione, Button>,ObservableValue<Button>>(){
-                    @Override
-                    public ObservableValue<Button> call(CellDataFeatures<Stazione, Button> param) {
-                        final Button prenotaButton = new Button("Prenota");
-                        prenotaButton.setOnAction(new EventHandler<ActionEvent>(){
-                            @Override
-                            public void handle(ActionEvent event) {
+	private ServiziUtente service;
 
-                                dispatcher.renderView("prenotazione", null);
-                            }
-                        });
-                        return new SimpleObjectProperty<Button>(prenotaButton);
-                    }
+	public PrenotazioneController() {
+		this.dispatcher = ViewDispatcher.getIstance();
+		Utente utente = new Utente();
+		service = new ServiziUtente(utente);
+	}
 
-                });
-        
-        ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(service.getAllStazioni());
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+	}
 
-        prenotazioneTable.setItems(allStazioni);
+	@Override
+	public void initializeData(Utente data) {
+		// this.utente=utente;
+		// prenotazione = new Prenotazione(utente);
+		stazioneColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+		biciColumn.setCellValueFactory(new PropertyValueFactory<>("libere"));
+		prenotaColumn.setCellValueFactory(
+				new Callback<TableColumn.CellDataFeatures<Stazione, Button>, ObservableValue<Button>>() {
+					@Override
+					public ObservableValue<Button> call(CellDataFeatures<Stazione, Button> param) {
+						final Button prenotaButton = new Button("Prenota");
+						prenotaButton.setOnAction(new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
 
-    }
+								dispatcher.renderView("prenotazione", null);
+							}
+						});
+						return new SimpleObjectProperty<Button>(prenotaButton);
+					}
+
+				});
+
+		ObservableList<Stazione> allStazioni = FXCollections.observableList(service.getAllStazioni());
+
+		prenotazioneTable.setItems(allStazioni);
+
+	}
 
 }

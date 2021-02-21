@@ -50,7 +50,7 @@ public class ServiziUtente /* implements *****/  {
     }
     
     public List<Stazione> getAllStazioni(){
-    	return new LinkedList(stazioni.getStazioni());
+    	return new LinkedList<Stazione>(stazioni.getStazioni());
     }
 
     public Utente getUtente() {
