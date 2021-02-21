@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -36,7 +38,6 @@ public class PrenotazioneController implements Initializable, DataInitializable<
     public PrenotazioneController() {
         this.dispatcher = ViewDispatcher.getIstance();
         Utente utente = new Utente();
-        utente
     }
 
     @Override
@@ -45,9 +46,9 @@ public class PrenotazioneController implements Initializable, DataInitializable<
 
     @Override
     public void initializeData(Utente data) {
-        this.utente=utente;
+        // this.utente=utente;
         // prenotazione = new Prenotazione(utente);
-        stazioneColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        stazioneColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         prenotaColumn.setCellValueFactory(
                 new Callback<TableColumn.CellDataFeatures<Stazione, Button>,ObservableValue<Button>>(){
@@ -58,7 +59,7 @@ public class PrenotazioneController implements Initializable, DataInitializable<
                             @Override
                             public void handle(ActionEvent event) {
 
-                                dispatcher.renderView("prenotazione",utente);
+                                dispatcher.renderView("prenotazione", null);
                             }
                         });
                         return new SimpleObjectProperty<Button>(prenotaButton);

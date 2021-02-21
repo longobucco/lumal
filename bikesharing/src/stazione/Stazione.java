@@ -5,7 +5,7 @@ import java.util.List;
 
 import sistemacentrale.Prenotazione;
 
-public class Stazione implements consegnaBici{
+public class Stazione /* implements consegnaBici */ {
 
 	private String name;
 	private static int totali;

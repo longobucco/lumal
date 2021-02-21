@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class GestoreStazioni implements riconsegnaBici,corsa,prenotazione{
+public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ {
 
 	//mappa per mantenere lo stato delle prenotazioni
 	private Map<Stazione,Integer> statoStazioni;
