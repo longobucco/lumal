@@ -19,10 +19,10 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 	private List<Prenotazione> prenotazioni;
 	// liste delle corse in corso
 	private List<Corsa> corse;
-
-	private static GestoreStazioni istance = new GestoreStazioni();
-
-	public GestoreStazioni() {
+	List<Stazione> listaStazioni; 
+	private static GestoreStazioni instance = new GestoreStazioni();
+	
+	private GestoreStazioni() {
 		// metodo che prende in input le stazioni
 		Stazione stazione1 = new Stazione("San Donato");
 		Stazione stazione2 = new Stazione("Porta Nuova");
@@ -34,6 +34,9 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 		statoStazioni.put(stazione2, 7);
 		cercaStazioni.put(stazione2.getName(), stazione2);
 		corse = new LinkedList<Corsa>();
+		listaStazioni = new LinkedList<Stazione>();
+		listaStazioni.add(stazione1);
+		listaStazioni.add(stazione2);
 		prenotazioni = new LinkedList<Prenotazione>();
 		System.out.println(cercaStazioni.get(stazione1.getName()).getName());
 	}
@@ -72,14 +75,6 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 	 * 
 	 * @param corsa
 	 */
-	public boolean nuovaCorsa(Corsa corsa) {
-
-		throw new UnsupportedOperationException();
-	}
-
-	public boolean nuovaCorsaPrenotata(Prenotazione prenotazione) {
-		throw new UnsupportedOperationException();
-	}
 
 	public Map<Stazione, Integer> getStatoStazioni() {
 		return statoStazioni;
@@ -87,11 +82,11 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 
 	public List<Stazione> getStazioni() {
 		System.out.println("OK");
-		return new LinkedList<Stazione>(statoStazioni.keySet());
+		return listaStazioni;
 	}
-
-	public static GestoreStazioni getIstance() {
-		return istance;
+	
+	public static GestoreStazioni getInstance() {
+		return instance;
 	}
 
 }
