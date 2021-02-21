@@ -23,9 +23,25 @@ public class GestoreStazioni {
 	
 	private GestoreStazioni() {
 		// metodo che prende in input le stazioni
+<<<<<<< HEAD
+=======
+		Stazione stazione1 = new Stazione("San Donato", 15);
+		Stazione stazione2 = new Stazione("Porta Nuova", 20);
+		Stazione stazione3 = new Stazione("Via Roma", 0);
+>>>>>>> refs/remotes/origin/main
 		statoStazioni = new HashMap<Stazione, Integer>();
 		cercaStazioni = new HashMap<String, Stazione>();
+<<<<<<< HEAD
 		prenotazioni = new LinkedList<Prenotazione>();
+=======
+		prenotazioni = new LinkedList();
+		statoStazioni.put(stazione1, 7);
+		cercaStazioni.put(stazione1.getName(), stazione1);
+		statoStazioni.put(stazione2, 7);
+		cercaStazioni.put(stazione2.getName(), stazione2);
+		statoStazioni.put(stazione3, 7);
+		cercaStazioni.put(stazione3.getName(), stazione3);
+>>>>>>> refs/remotes/origin/main
 		corse = new LinkedList<Corsa>();
 		prenotazioni = new LinkedList<Prenotazione>();
 	}
