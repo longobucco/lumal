@@ -7,11 +7,13 @@ public class ServiziUtente /* implements *****/  {
     private Corsa corsa;
     private Abbonamento abbonamento;
     private Utente utente;
+    private GestoreStazioni stazioni;
 
     public ServiziUtente(Utente utente) {
         this.setUtente(utente);
         prenotazione=null;
         corsa=null;
+        stazioni=GestoreStazioni.getIstance();
         //facciamo finta che venga preso da un DB
         abbonamento = new Abbonamento();
     }
@@ -24,7 +26,6 @@ public class ServiziUtente /* implements *****/  {
     private boolean iniziaCorsa(String stazione) {
         if(corsa != null) return false;
 
-        // se si Ã¨ giÃ  prenotati basta iniziare una corsa e
         if(prenotazione != null) {
 
         }
@@ -33,9 +34,11 @@ public class ServiziUtente /* implements *****/  {
 
     }
 
-    public boolean prenotazione(Stazione stazione) {
-        return false;
-
+    public boolean prenotazione(String stazione) {
+        if(prenotazione != null)return false;
+        prenotazione = new Prenotazione();
+        prenotazione.setStazione(stazione);
+        stazioni.prenotazione(prenotazione);
     }
 
     public Utente getUtente() {

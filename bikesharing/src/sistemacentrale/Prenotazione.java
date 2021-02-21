@@ -6,21 +6,18 @@ import java.time.Duration;
 
 public class Prenotazione {
 
-	private Duration Timer;
+	private Duration timer;
 	private String stazione;
-	private String postazione;
+	
+	public Prenotazione() {
+		//imposto timer
+	}
 	
 	public String getStazione() {
 		return stazione;
 	}
 	public void setStazione(String stazione) {
 		this.stazione = stazione;
-	}
-	public String getPostazione() {
-		return postazione;
-	}
-	public void setPostazione(String postazione) {
-		this.postazione = postazione;
 	}
 
 }

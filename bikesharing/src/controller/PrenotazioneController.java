@@ -58,7 +58,7 @@ public class PrenotazioneController implements Initializable, DataInitializable<
                             @Override
                             public void handle(ActionEvent event) {
 
-                                dispatcher.renderView("####",utente);
+                                dispatcher.renderView("prenotazione",utente);
                             }
                         });
                         return new SimpleObjectProperty<Button>(prenotaButton);
