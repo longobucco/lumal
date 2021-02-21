@@ -69,8 +69,7 @@ public class PrenotazioneController implements Initializable, DataInitializable<
 
                 });
         
-        List<Stazione> getStazione = new ArrayList<Stazione>(service.getAllStazioni());
-        ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(getStazione);
+        ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(service.getAllStazioni();
 
         prenotazioneTable.setItems(allStazioni);
 
