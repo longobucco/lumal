@@ -7,7 +7,7 @@ import java.util.List;
 
 import stazione.Stazione;
 
-public class ServiziUtente /* implements *****/ {
+public class ServiziUtente {
 
 	private Prenotazione prenotazione;
 	private Corsa corsa;
@@ -15,13 +15,12 @@ public class ServiziUtente /* implements *****/ {
 	private Utente utente;
 	private Integer Strike;
 	private GestoreStazioni stazioni;
-	
+
 	public ServiziUtente(Utente utente) {
 		this.setUtente(utente);
 		prenotazione = null;
 		corsa = null;
 		stazioni = GestoreStazioni.getInstance();
-		// facciamo finta che venga preso da un DB
 		abbonamento = new Abbonamento();
 	}
 
@@ -40,16 +39,17 @@ public class ServiziUtente /* implements *****/ {
 		return false;
 	}
 
-	/*
-	 * public boolean prenotazione(String stazione) { if (prenotazione != null)
-	 * return false; prenotazione = new Prenotazione();
-	 * prenotazione.setStazione(stazione); stazioni.prenotazione(prenotazione);
-	 * return true; }
-	 */
+	public boolean prenotazione(String stazione) {
+		if (prenotazione != null)
+			return false;
+		prenotazione = new Prenotazione();
+		prenotazione.setStazione(stazione);
+		stazioni.prenotazione(prenotazione);
+		return true;
+	}
+
 	public List<Stazione> getAllStazioni() {
-		System.out.println("1");
 		return stazioni.getStazioni();
-		// return new LinkedList<Stazione>(stazioni.getStazioni());
 	}
 
 	public Utente getUtente() {
