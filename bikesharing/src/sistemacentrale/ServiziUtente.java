@@ -14,7 +14,6 @@ public class ServiziUtente /* implements *****/  {
     private Corsa corsa;
     private Abbonamento abbonamento;
     private Utente utente;
-    private GestoreStazioni stazioni;
     private Integer Strike;
 
     public ServiziUtente(Utente utente) {
