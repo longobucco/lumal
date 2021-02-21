@@ -1,6 +1,7 @@
 package controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -67,9 +68,14 @@ public class PrenotazioneController implements Initializable, DataInitializable<
                     }
 
                 });
+<<<<<<< HEAD
         
         
         ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(service.getAllStazioni());
+=======
+        List<Stazione> getStazione = new ArrayList<Stazione>(service.getAllStazioni());
+        ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(getStazione);
+>>>>>>> branch 'main' of https://github.com/maca99/lumal.git
         prenotazioneTable.setItems(allStazioni);
 
     }
