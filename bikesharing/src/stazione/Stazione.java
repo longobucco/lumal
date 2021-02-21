@@ -13,12 +13,12 @@ public class Stazione /* implements consegnaBici */ {
 	private int libere;
 	private String ID;
 
-	public Stazione(String name) {
+	public Stazione(String name, int liberi) {
 		this.name = name;
 		stato = new LinkedList<Postazione>();
 		stato.add(new Postazione());
 		totali = stato.size();
-		libere = totali;
+		libere = liberi;
 
 	}
 
@@ -26,15 +26,15 @@ public class Stazione /* implements consegnaBici */ {
 		return stato;
 	}
 
-	/**
-	 *
-	 * @param stato
-	 */
-
 	public int getOccupazione() {
 		return libere-totali;
 	}
 
+	public int getLiberi() {return libere;}
+
+	public void setLiberi(int l) {
+		libere = l;
+	}
 
 	public void notificaConsegnaBici() {
 
