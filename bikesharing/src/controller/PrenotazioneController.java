@@ -1,6 +1,7 @@
 package controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -66,8 +67,8 @@ public class PrenotazioneController implements Initializable, DataInitializable<
                     }
 
                 });
-        
-        ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(service.getAllStazioni());
+        List<Stazione> getStazione = new ArrayList<Stazione>(service.getAllStazioni());
+        ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(getStazione);
         prenotazioneTable.setItems(allStazioni);
 
     }
