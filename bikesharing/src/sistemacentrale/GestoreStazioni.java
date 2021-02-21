@@ -24,8 +24,9 @@ public class GestoreStazioni implements riconsegnaBici,corsa,prenotazione{
 	
 	public GestoreStazioni() {
 		//metodo che prende in input le stazioni
+		Stazione stazione1 = new Stazione("ghgvhgvg");
 		statoStazioni = new HashMap<Stazione,Integer>();
-		stazioni = new HashMap<String,Stazione>();
+		cercaStazioni = new HashMap<String,Stazione>();
 		prenotazioni = new LinkedList();
 		corse = new LinkedList<Corsa>();
 	}
@@ -37,7 +38,7 @@ public class GestoreStazioni implements riconsegnaBici,corsa,prenotazione{
 	public boolean prenotazione(Prenotazione prenotazione) {
 		/*gli viene passata una prenotazione e riserva un posto in una stazione
 		*all'utente della prenotazione*/
-		Stazione stazione = stazioni.get(prenotazione.getStazione());
+		Stazione stazione = cercaStazioni.get(prenotazione.getStazione());
 		int libere = statoStazioni.get(stazione);
 		if(libere > 0) {
 			statoStazioni.replace(stazione, libere-1);
@@ -50,7 +51,7 @@ public class GestoreStazioni implements riconsegnaBici,corsa,prenotazione{
 	public boolean cancellaPrenotazione(Prenotazione prenotazione) {
 		
 		if(prenotazioni.remove(prenotazione)) {
-			Stazione stazione = stazioni.get(prenotazione.getStazione());
+			Stazione stazione = cercaStazioni.get(prenotazione.getStazione());
 			int libere = statoStazioni.get(stazione);
 			statoStazioni.replace(stazione, libere+1);
 			return true;

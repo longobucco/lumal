@@ -13,8 +13,10 @@ public class Stazione implements consegnaBici{
 	private int libere;
 	private String ID;
 
-	public Stazione() {
+	public Stazione(String name) {
+		this.name = name;
 		stato = new LinkedList<Postazione>();
+		stato.add(new Postazione());
 		totali = stato.size();
 		libere = totali;
 
@@ -41,6 +43,9 @@ public class Stazione implements consegnaBici{
 
 	public String getName() {
 		return name;
+	}
+	public void setName(String name) {
+		
 	}
 
 
