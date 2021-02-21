@@ -14,7 +14,8 @@ public class ServiziUtente /* implements *****/  {
     private Abbonamento abbonamento;
     private Utente utente;
     private Integer Strike;
-
+    private GestoreStazioni stazioni;
+    
     public ServiziUtente(Utente utente) {
         this.setUtente(utente);
         prenotazione=null;
