@@ -1,3 +1,7 @@
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
 import stazione.Stazione;
 
 public class ServiziUtente /* implements *****/  {
@@ -8,6 +12,7 @@ public class ServiziUtente /* implements *****/  {
     private Abbonamento abbonamento;
     private Utente utente;
     private GestoreStazioni stazioni;
+    private Integer Strike;
 
     public ServiziUtente(Utente utente) {
         this.setUtente(utente);
@@ -39,6 +44,11 @@ public class ServiziUtente /* implements *****/  {
         prenotazione = new Prenotazione();
         prenotazione.setStazione(stazione);
         stazioni.prenotazione(prenotazione);
+        return true;
+    }
+    
+    public List<Stazione> getAllStazioni(){
+    	return new LinkedList(stazioni.getStazioni());
     }
 
     public Utente getUtente() {

@@ -13,7 +13,7 @@ public class GestoreStazioni implements riconsegnaBici,corsa,prenotazione{
 	//mappa per mantenere lo stato delle prenotazioni
 	private Map<Stazione,Integer> statoStazioni;
 	//mappa che associa i nomi alle relative stazioni
-	private Map<String,Stazione> stazioni;
+	private Map<String,Stazione> cercaStazioni;
 	
 	//serve per tenere traccia degli utenti che iniziano una nuova corsa prenotata
 	private List<Prenotazione> prenotazioni;
@@ -71,7 +71,10 @@ public class GestoreStazioni implements riconsegnaBici,corsa,prenotazione{
 		throw new UnsupportedOperationException();
 	}
 
-	public Set<Stazione> getStatoStazioni() {
+	public Map<Stazione,Integer> getStatoStazioni() {
+		return statoStazioni;
+	}
+	public Set<Stazione> getStazioni(){
 		return statoStazioni.keySet();
 	}
 	public static GestoreStazioni getIstance() {

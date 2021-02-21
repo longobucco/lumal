@@ -16,8 +16,7 @@ import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
-import sistemacentrale.Prenotazione;
-import sistemacentrale.Utente;
+import sistemacentrale.*;
 import stazione.Stazione;
 import view.DataInitializable;
 import view.ViewDispatcher;
@@ -32,11 +31,12 @@ public class PrenotazioneController implements Initializable, DataInitializable<
     private TableColumn<Stazione,Button> prenotaColumn;
 
     private ViewDispatcher dispatcher;
-    private Utente utente;
-    private Prenotazione prenotazione;
+    private ServiziUtente service;
 
     public PrenotazioneController() {
         this.dispatcher = ViewDispatcher.getIstance();
+        Utente utente = new Utente();
+        utente
     }
 
     @Override
@@ -65,7 +65,9 @@ public class PrenotazioneController implements Initializable, DataInitializable<
                     }
 
                 });
-
+        
+        ObservableList<Stazione> allStazioni = FXCollections.observableArrayList(service.getAllStazioni());
+        prenotazioneTable.setItems(allStazioni);
 
     }
 
