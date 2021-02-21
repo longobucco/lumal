@@ -17,6 +17,9 @@ public class Stazione /* implements consegnaBici */ {
 		this.name = name;
 		stato = new LinkedList<Postazione>();
 		stato.add(new Postazione());
+		stato.add(new Postazione());
+		stato.add(new Postazione());
+		stato.add(new Postazione());
 		totali = stato.size();
 		libere = totali;
 
