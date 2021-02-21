@@ -38,6 +38,7 @@ public class PrenotazioneController implements Initializable, DataInitializable<
     public PrenotazioneController() {
         this.dispatcher = ViewDispatcher.getIstance();
         Utente utente = new Utente();
+        
     }
 
     @Override
