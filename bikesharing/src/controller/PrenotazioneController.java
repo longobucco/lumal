@@ -24,7 +24,7 @@ import stazione.Stazione;
 import view.DataInitializable;
 import view.ViewDispatcher;
 
-public class PrenotazioneController implements Initializable, DataInitializable<Utente> {
+public class PrenotazioneController implements Initializable, DataInitializable<Object> {
 
 	@FXML
 	private TableView<Stazione> prenotazioneTable;
@@ -53,9 +53,10 @@ public class PrenotazioneController implements Initializable, DataInitializable<
 	}
 
 	@Override
-	public void initializeData(Utente data) {
+	public void initializeData(Object data) {
 		// this.utente=utente;
 		// prenotazione = new Prenotazione(utente);
+		System.out.println("vfmk");
 		stazioneColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 		biciColumn.setCellValueFactory(new PropertyValueFactory<>("libere"));
 		prenotaColumn.setCellValueFactory(

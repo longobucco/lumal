@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ {
+public class GestoreStazioni {
 
 	// mappa per mantenere lo stato delle prenotazioni
 	private Map<Stazione, Integer> statoStazioni;
@@ -19,26 +19,15 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 	private List<Prenotazione> prenotazioni;
 	// liste delle corse in corso
 	private List<Corsa> corse;
-	List<Stazione> listaStazioni; 
 	private static GestoreStazioni instance = new GestoreStazioni();
 	
 	private GestoreStazioni() {
 		// metodo che prende in input le stazioni
-		Stazione stazione1 = new Stazione("San Donato");
-		Stazione stazione2 = new Stazione("Porta Nuova");
 		statoStazioni = new HashMap<Stazione, Integer>();
 		cercaStazioni = new HashMap<String, Stazione>();
 		prenotazioni = new LinkedList<Prenotazione>();
-		statoStazioni.put(stazione1, 7);
-		cercaStazioni.put(stazione1.getName(), stazione1);
-		statoStazioni.put(stazione2, 7);
-		cercaStazioni.put(stazione2.getName(), stazione2);
 		corse = new LinkedList<Corsa>();
-		listaStazioni = new LinkedList<Stazione>();
-		listaStazioni.add(stazione1);
-		listaStazioni.add(stazione2);
 		prenotazioni = new LinkedList<Prenotazione>();
-		System.out.println(cercaStazioni.get(stazione1.getName()).getName());
 	}
 
 	/**
@@ -81,8 +70,7 @@ public class GestoreStazioni /* implements riconsegnaBici,corsa,prenotazione */ 
 	}
 
 	public List<Stazione> getStazioni() {
-		System.out.println("OK");
-		return listaStazioni;
+		return new LinkedList<Stazione>(cercaStazioni.values());
 	}
 	
 	public static GestoreStazioni getInstance() {

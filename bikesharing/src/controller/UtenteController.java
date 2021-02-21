@@ -54,12 +54,8 @@ public class UtenteController implements Initializable, DataInitializable<Utente
 
 	@FXML
 	public void prenotazioneAction(ActionEvent event) {
-		try {
-			var view = dispatcher.loadView("interfacciaPrenotazione").getView();
-			principale.setCenter(view);
-		} catch (ViewException e) {
-			e.printStackTrace();
-		}
+		/*	var view = */ dispatcher.renderView("interfacciaPrenotazione", null);
+			// principale.setCenter(view);
 	}
 
 	@FXML
