@@ -1,7 +1,9 @@
 package stazione;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import sistemacentrale.Prenotazione;
 
@@ -9,24 +11,23 @@ public class Stazione /* implements consegnaBici */ {
 
 	private String name;
 	private static int totali;
-	private List<Postazione> stato;
+	private Map<String,Postazione> stato;
 	private int libere;
 	private String ID;
 
-	public Stazione(String name, int liberi) {
+	public Stazione(String name) {
 		this.name = name;
-		stato = new LinkedList<Postazione>();
-		stato.add(new Postazione());
-		stato.add(new Postazione());
-		stato.add(new Postazione());
-		stato.add(new Postazione());
-		totali = stato.size();
-		libere = liberi;
+		stato = new HashMap<String,Postazione>();
+		stato.put("12354",new Postazione());
+		stato.put("45656",new Postazione());
+		stato.put("g5dr5",new Postazione());
+		stato.put("bjt5d",new Postazione());
+		totali = stato.size();libere = totali;
 
 	}
 
 	public List<Postazione> getStato() {
-		return stato;
+		return new LinkedList<Postazione>(stato.values());
 	}
 
 	public int getOccupazione() {

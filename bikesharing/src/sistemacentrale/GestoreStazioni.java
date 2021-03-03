@@ -24,9 +24,9 @@ public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione *
 
 	public GestoreStazioni() {
 		// metodo che prende in input le stazioni
-		Stazione stazione1 = new Stazione("San Donato", 15);
-		Stazione stazione2 = new Stazione("Porta Nuova", 20);
-		Stazione stazione3 = new Stazione("Via Roma", 0);
+		Stazione stazione1 = new Stazione("San Donato");
+		Stazione stazione2 = new Stazione("Porta Nuova");
+		Stazione stazione3 = new Stazione("Via Roma");
 		statoStazioni = new HashMap<Stazione, Integer>();
 		cercaStazioni = new HashMap<String, Stazione>();
 		prenotazioni = new LinkedList();
@@ -75,12 +75,14 @@ public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione *
 	 * @param corsa
 	 */
 	public boolean nuovaCorsa(Corsa corsa) {
-
+		Stazione st = cercaStazioni.get(corsa.getStazionePartenza());
+		Postazione 
+		
 		throw new UnsupportedOperationException();
 	}
 
 	public boolean nuovaCorsaPrenotata(Prenotazione prenotazione) {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public Map<Stazione, Integer> getStatoStazioni() {

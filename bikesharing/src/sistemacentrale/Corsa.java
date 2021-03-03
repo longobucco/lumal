@@ -6,28 +6,40 @@ import java.time.LocalTime;
 
 public class Corsa {
 
-	private LocalTime ora;
-	private String stazione;
-	private String postazione;
+	private LocalTime inizio,fine;
+	private String stazionePartenza,stazioneArrivo;
+	private String postazionePartenza,postazioneArrivo;
 
 	/**
 	 *
 	 * @param postazione
+	 * @throws Exception 
 	 */
 
 	//prende la stringa mandata dall'utente che scannerizza il qr code
-	public void Corsa(String cardinalitÃ ) {
-
-		throw new UnsupportedOperationException();
+	public Corsa(String coordinate ) throws Exception {
+		if(coordinate.length() != 10)throw new Exception();
+			inizio = LocalTime.now();
+			stazionePartenza = coordinate.substring(0, 4);
+			postazionePartenza = coordinate.substring(5, 9);
 	}
 
 	/**
 	 *
 	 * @param postazione
 	 */
-	public void fineCorsa(Postazione postazione) {
-		// TODO - implement Corsa.fineCorsa
-		throw new UnsupportedOperationException();
+	public void fineCorsa(String coordinate) {
+		fine = LocalTime.now();
+		stazionePartenza = coordinate.substring(0, 4);
+		stazioneArrivo = coordinate.substring(5, 9);
+	}
+
+	public String getStazionePartenza() {
+		return stazionePartenza;
+	}
+
+	public String getPostazionePartenza() {
+		return postazionePartenza;
 	}
 
 }
