@@ -29,7 +29,7 @@ public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione *
 		Stazione stazione3 = new Stazione("Via Roma");
 		statoStazioni = new HashMap<Stazione, Integer>();
 		cercaStazioni = new HashMap<String, Stazione>();
-		prenotazioni = new LinkedList();
+		prenotazioni = new LinkedList<Prenotazione>();
 		statoStazioni.put(stazione1, 7);
 		cercaStazioni.put(stazione1.getName(), stazione1);
 		statoStazioni.put(stazione2, 7);
