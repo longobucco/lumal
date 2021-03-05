@@ -76,12 +76,12 @@ public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione *
 	 */
 	public boolean nuovaCorsa(Corsa corsa) {
 		Stazione st = cercaStazioni.get(corsa.getStazionePartenza());
-		Postazione 
 		
 		throw new UnsupportedOperationException();
 	}
 
 	public boolean nuovaCorsaPrenotata(Prenotazione prenotazione) {
+		return false;
 		
 	}
 
