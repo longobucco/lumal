@@ -29,7 +29,7 @@ public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione *
 		Stazione stazione3 = new Stazione("Via Roma");
 		statoStazioni = new HashMap<Stazione, Integer>();
 		cercaStazioni = new HashMap<String, Stazione>();
-		prenotazioni = new LinkedList();
+		prenotazioni = new LinkedList<Prenotazione>();
 		statoStazioni.put(stazione1, 7);
 		cercaStazioni.put(stazione1.getName(), stazione1);
 		statoStazioni.put(stazione2, 7);
@@ -75,14 +75,21 @@ public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione *
 	 * @param corsa
 	 */
 	public boolean nuovaCorsa(Corsa corsa) {
+<<<<<<< HEAD
 		Stazione st = cercaStazioni.get(corsa.getStazionePartenza());
+=======
+>>>>>>> branch 'main' of https://github.com/maca99/lumal
 		
 		throw new UnsupportedOperationException();
 	}
 
 	public boolean nuovaCorsaPrenotata(Prenotazione prenotazione) {
+<<<<<<< HEAD
 		return false;
 		
+=======
+		throw new UnsupportedOperationException();
+>>>>>>> branch 'main' of https://github.com/maca99/lumal
 	}
 
 	public Map<Stazione, Integer> getStatoStazioni() {
