@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione */ {
 
@@ -75,21 +74,12 @@ public class GestoreStazioni /* implements riconsegnaBici, corsa, prenotazione *
 	 * @param corsa
 	 */
 	public boolean nuovaCorsa(Corsa corsa) {
-<<<<<<< HEAD
-		Stazione st = cercaStazioni.get(corsa.getStazionePartenza());
-=======
->>>>>>> branch 'main' of https://github.com/maca99/lumal
 		
 		throw new UnsupportedOperationException();
 	}
 
 	public boolean nuovaCorsaPrenotata(Prenotazione prenotazione) {
-<<<<<<< HEAD
-		return false;
-		
-=======
 		throw new UnsupportedOperationException();
->>>>>>> branch 'main' of https://github.com/maca99/lumal
 	}
 
 	public Map<Stazione, Integer> getStatoStazioni() {
