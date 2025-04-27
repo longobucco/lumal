@@ -1,0 +1,8 @@
+Veicolo
+Danneggiato
+Prenotazione
+Non è andata a buon fine
+Pagamento
+Il pagamento non viene processato
+Prenotazione
+Non riesco ad effettuare la prenotazione

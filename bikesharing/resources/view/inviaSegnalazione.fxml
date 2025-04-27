@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="427.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SegnalazioneController">
+   <children>
+      <Button fx:id="invioSegnalazione" layoutX="219.0" layoutY="319.0" mnemonicParsing="false" onAction="#invioButton" prefHeight="34.0" prefWidth="89.0" text="Invia" />
+      <ChoiceBox fx:id="sceltaSegnalazione" layoutX="122.0" layoutY="79.0" prefWidth="150.0" />
+      <TextField fx:id="testoSegnalazione" layoutX="122.0" layoutY="158.0" prefHeight="112.0" prefWidth="283.0" />
+      <Text layoutX="122.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aggiungi descrizione:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Text>
+      <Text layoutX="126.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleziona categoria:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Text>
+   </children>
+</AnchorPane>
